@@ -1,6 +1,6 @@
 "#JavaScript Problems" 
 
-10 Problems Using Conditional Statements
+Problems Using Conditional Statements
 
 1. Odd or Even
     Write a Program to check whether a given number is odd or even using 
@@ -39,7 +39,7 @@
 10. Triangle Type 
     Determine the type of triangle (Equilateral, Isosceles, or Scalene) based on the lengths of its sides.
 
-10 Problems Usinf Loops
+Problems Using Loops
 
 11. Multiplcation Table
     Write a program to print the multiplication table of a given number, using a loop.
