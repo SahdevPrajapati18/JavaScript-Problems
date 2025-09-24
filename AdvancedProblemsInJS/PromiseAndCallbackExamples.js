@@ -80,3 +80,24 @@
 // Write a  function fakeApiCall(endpoint) that:
 // Accepts a tring like "users" or "posts"
 // Resolves with some dummy data after a random delay (1-3 sec)
+
+function fakeApiCall(endpoint){
+    const data={
+        user : ["Varun", "Sahdev", "Anand"],
+        posts: ["hey","hi","how are you"]
+    }
+
+    let delay = Math.random()*2000 + 1000;
+
+    return new Promise(function(res, rej){
+        setTimeout(() => {
+            console.log(data[endpoint]);
+        }, delay);
+    });
+}
+
+
+fakeApiCall("posts").then(function(){
+    res(data.user);
+})
+
