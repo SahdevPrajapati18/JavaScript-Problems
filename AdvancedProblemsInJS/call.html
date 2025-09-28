@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+
+<body>
+    <button class="callback">Click Me</button>
+
+    <script>
+        let btn = document.querySelector(".callback");
+
+        btn.addEventListener("click", () => {
+            varun(()=>{
+                console.log("varun")
+            });
+
+        })
+
+        function varun(cb){
+            console.log("Varun is harami");
+            cb();
+        }
+
+    </script>
+</body>
+
+</html>

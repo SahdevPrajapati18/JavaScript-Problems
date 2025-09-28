@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Authentication</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+    }
+
+    .auth-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      width: 350px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .auth-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .auth-container form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .auth-container label {
+      margin: 10px 0 5px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .auth-container input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .auth-container input:focus {
+      border-color: #6e8efb;
+    }
+
+    .auth-container button {
+      margin-top: 20px;
+      padding: 12px;
+      border: none;
+      background: #6e8efb;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .auth-container button:hover {
+      background: #5a75db;
+    }
+
+    .auth-container .switch {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .auth-container .switch a {
+      color: #6e8efb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .auth-container .switch a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2>Login</h2>
+    <form>
+      <label>Email</label>
+      <input class="email1" type="email" placeholder="Enter your email" required>
+      
+      <label>Password</label>
+      <input  class="ps" type="password" placeholder="Enter your password" required>
+      
+      <button type="submit">Login</button>
+    </form>
+
+    <div class="switch">
+      Don’t have an account? <a href="#">Sign Up</a>
+    </div>
+  </div>
+
+  <script>
+    const obj={
+        Email: "Sahdevprajapati@gmail.com",
+        Password: "12345"
+    }
+
+    let ema= document.querySelector(".email1").value;
+    let pass = document.querySelector(".ps").value;
+    let btn = document.querySelector("button");
+    
+    btn.addEventListener("click",()=>{
+        authentication(email,password,function(sucess){
+            if(sucess){
+                console.log("succesfully authenicated")
+            }
+            console.log("not authenicated")
+        });
+    })
+
+    function authentication(email,password,cb){
+         
+        if(ema===email && pass === password ){
+            cb(true)
+        }
+        else{
+            cb(false);
+        }
+        cb();
+    }
+    
+  </script>
+
+</body>
+</html>

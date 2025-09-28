@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Counter Button</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btn{
+            padding:10px;
+            border: none;
+            border-radius: 10px;
+            background-color: green;
+            color: white;
+            margin: 10px;
+        }
+        .btnD{
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            margin: 10px;
+        }
+        p{
+            background-color: Yellow;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+        <button class="btn">Increase</button>
+        <button class="btnD">Decrease</button>
+    <script>
+        let bt = document.querySelector('.btn');
+        let btnD = document.querySelector('.btnD');
+        let p = document.createElement('p');
+        document.body.appendChild(p);
+
+        let count =0;
+        bt.addEventListener('click',()=>{
+            count++;
+            p.textContent = `Count: ${count}`;
+        });
+        btnD.addEventListener('click',()=>{
+            if(count>0){
+                 count--;
+            p.textContent = `Count: ${count}`;
+            }
+            else{
+                count=0;
+                 p.textContent = `Count: ${count}`;
+            }
+        })
+    </script>
+
+</body>
+</html>
