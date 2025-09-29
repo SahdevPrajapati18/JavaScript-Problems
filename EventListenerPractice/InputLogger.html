@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Logger</title>
+    <style>
+        body{
+            place-items: center;
+        }
+        input{
+            background-color: red;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        p{
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Input Logger</h1>
+    <input type="text" placeholder="Type Anything here">
+    
+    <script>
+        let inp = document.querySelector('input');
+        let p = document.createElement('p');
+        document.body.appendChild(p);
+        
+        inp.addEventListener('input',()=>{
+            p.style.backgroundColor = "Red";
+            p.style.color = "white"
+            p.innerText = inp.value;
+            
+        })
+    </script>
+</body>
+</html>
