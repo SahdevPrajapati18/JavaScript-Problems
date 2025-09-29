@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <label for="name">Name: <input class="nam" type="text"></label>
+    <label for="Email">Email: <input class ="mail" type="email"></label>
+    <button class="btn">
+        Submit
+    </button>
+
+    <script>
+        let nam = document.querySelector('.nam');
+        let mail = document.querySelector('.mail');
+        let btn = document.querySelector('.btn')
+
+        btn.addEventListener('click',()=>{
+            if(nam.value === "" && mail.value ===""){
+                alert("Fill the fields")
+            }
+            else{
+                alert("Submission succesful")
+            }
+        })
+    </script>
+    
+</body>
+</html>

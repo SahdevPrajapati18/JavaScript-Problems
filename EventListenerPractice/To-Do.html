@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        /* Basic body styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            background-color: #f0f2f5;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+            transition: 0.2s;
+            margin-bottom: 2rem;
+        }
+
+        input[type="text"]:focus {
+            border-color: #4CAF50;
+        }
+
+
+        .btn {
+            padding: 10px 15px;
+            margin-left: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .taskList {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            width: 350px;
+        }
+
+        .taskList li {
+            background-color: white;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: 0.2s;
+        }
+
+        .taskList li:hover {
+            background-color: #f9f9f9;
+        }
+
+
+        .taskList li button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e74c3c;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .taskList li button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <h1>My To-Do List</h1>
+    <label for="new">New Task: <input type="text"></label>
+    <button class="btn">Submit</button>
+    <ul class="taskList"></ul>
+
+    <script>
+        let inp = document.querySelector("input");
+        let btn = document.querySelector(".btn");
+        let taskList = document.querySelector('.taskList');
+
+        btn.addEventListener('click', () => {
+            if (inp.value.trim() !== "") {
+                let li = document.createElement('li');
+                li.innerText = inp.value;
+
+                let bt = document.createElement('button');
+                bt.innerText = "Delete";
+                bt.addEventListener('click', () => {
+                    li.remove();
+                });
+
+                li.appendChild(bt);
+                taskList.appendChild(li);
+                inp.value = "";
+            } else {
+                alert("Please enter a task");
+            }
+        });
+    </script>
+</body>
+</html>

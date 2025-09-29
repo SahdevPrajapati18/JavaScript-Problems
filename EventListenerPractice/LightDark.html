@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light/Dark Mode Toggle</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            place-items: center;
+            background-color: black;
+        }
+        h1 {
+            background-color: yellow;
+            border-radius: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .btn{
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: green;
+            color:white;
+            cursor: pointer;
+        }
+        .btn:hover{
+            background-color: rgb(16, 41, 16);
+        }
+        section {
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            height: 300px;
+            width: 600px;
+        }
+        .card{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap:2rem;
+            place-items: center;
+        }
+        .card1{
+            height: 200px;
+            width: 200px;
+            background-color: grey;
+            border-radius: 10px;
+        }
+        .card2{
+            height: 200px;
+            width: 200px;
+            background-color: yellow;
+            border-radius: 10px;
+        }
+        .card3{
+            height: 200px;
+            width: 200px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        p{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Light/Dark Mode Toggle</h1>
+    <button class="btn">Toggle</button>
+    <section>
+        <div class="card">
+            <div class="card1"></div>
+            <div class="card2"></div>
+            <div class="card3"></div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy All rights are reserved.</p>
+    </footer>
+
+    <script>
+        let h = document.querySelector('h1');
+        let btn = document.querySelector('.btn');
+        let sect = document.querySelector('section');
+
+        let colors = ["red", "green", "pink", "blue"];
+
+        btn.addEventListener('click',()=>{
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            h.style.backgroundColor = randomColor;
+            sect.style.backgroundColor = randomColor;
+
+        })
+
+    </script>
+</body>
+</html>
