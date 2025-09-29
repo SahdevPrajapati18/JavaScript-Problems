@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click Detector</title>
+    <style>
+        body{
+            place-items: center;
+        }
+        h1{
+            background-color: black;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .box{
+            margin: 5vh;
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Double Click Detector</h1>
+    <div class="box">
+
+    </div>
+    <script>
+        let box = document.querySelector('.box');
+
+        box.addEventListener('dblclick',()=>{
+            if (box.style.backgroundColor === "red") {
+                box.style.backgroundColor = "green";
+                box.style.scale = "1.2"
+            }
+            else {
+                box.style.backgroundColor = "red";
+                box.style.scale = "1"
+            }
+        })
+    </script>    
+</body>
+</html>
