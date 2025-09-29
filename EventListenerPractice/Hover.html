@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Effect</title>
+    <style>
+        body{
+            place-items: center;
+        }
+        h1{
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 10px;
+            color: white;
+            background-color: blue;
+            padding: 10px;
+        }
+        h2{
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            background-color: rgb(60, 0, 255);
+            width: 300px;
+            padding: 10px;
+            margin: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hover Effect</h1>
+    <h2>Hi hello how are you</h2>
+    
+    <script>
+        let hello = document.querySelector('h2');
+
+        hello.addEventListener('mouseover',()=>{
+            hello.style.backgroundColor = "Green";
+        })
+        hello.addEventListener('mouseout',()=>{
+            hello.style.backgroundColor = "Red";
+        })
+    </script>
+</body>
+</html>
