@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Character Counter</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        h1{
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 300px;
+            height: 120px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            resize: none;
+        }
+        #counter {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .warning {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Character Count</h1>
+
+    <label for="tex">
+        <textarea id="tex" maxlength="100" placeholder="Type your message..."></textarea>
+    </label>
+    <p id="counter">Remaining: 100</p>
+
+    <script>
+        let tex = document.querySelector("#tex");
+        let para = document.querySelector("#counter");
+        let maxLength = tex.maxLength;
+
+        tex.addEventListener('input',()=>{
+            let remaining = maxLength - tex.value.length;
+            para.innerText = `Remaining: ${remaining}`;
+
+            if(remaining <= 10){
+                para.classList.add("warning");
+            } else {
+                para.classList.remove("warning");
+            }
+        });
+    </script>
+</body>
+</html>
